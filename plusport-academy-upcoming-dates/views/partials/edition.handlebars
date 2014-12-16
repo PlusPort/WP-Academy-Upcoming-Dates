@@ -1,0 +1,20 @@
+{{#each getTrainingSessionListResult.SessionInfo}}
+	<div class="edition">
+		<div class="training-name">
+			{{TrainingName}}
+		</div>
+		<div class="Location-address">
+			{{LocationAddress}}, {{LocationCity}}
+		</div>
+		<div class="session-dates">
+			{{#each SessionDates}}
+				<div class="session-date">
+					{{#each SessionDate}}
+						<div class="date-from">Van: {{formatDate DateFrom 'DD-MM-YYYY HH:MM'}}</div>
+						<div class="date-until">Tot: {{formatDate DateUntil 'DD-MM-YYYY HH:MM'}}</div>
+					{{/each}}
+				</div>
+			{{/each}}
+		</div>
+	</div>
+{{/each}}

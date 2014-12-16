@@ -160,8 +160,8 @@ class PlusPort_Academy_Upcoming_Dates extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 
 		$instance = $old_instance;
-
-		// TODO: Here is where you update your widget's old values with the new, incoming values
+		$instance['pp_academy_maxsession'] = $new_instance['pp_academy_maxsession'];
+		$instance['pp_academy_trainings_id'] = $new_instance['pp_academy_trainings_id'];
 
 		return $instance;
 
@@ -174,9 +174,10 @@ class PlusPort_Academy_Upcoming_Dates extends WP_Widget {
 	 */
 	public function form( $instance ) {
 
-		// TODO: Define default values for your variables
+		$defaults = array('pp_academy_maxsession' => 5, 'pp_academy_trainings_id' => 0);
 		$instance = wp_parse_args(
-			(array) $instance
+			(array) $instance,
+			$defaults
 		);
 
 		// TODO: Store the values of the widget in their own variable
@@ -249,7 +250,9 @@ class PlusPort_Academy_Upcoming_Dates extends WP_Widget {
 	 */
 	public function register_widget_scripts() {
 
-		wp_enqueue_script( $this->get_widget_slug().'-script', plugins_url( 'js/widget.js', __FILE__ ), array('jquery') );
+		wp_enqueue_script('handlebars', plugins_url( 'js/vendors/handlebars-v2.0.0.js', __FILE__ ), array('jquery'));
+		wp_enqueue_script('moment', plugins_url( 'js/vendors/moment.min.js', __FILE__ ), array('jquery'));
+		wp_enqueue_script($this->get_widget_slug().'-script', plugins_url( 'js/widget.js', __FILE__ ), array('jquery'));
 
 	} // end register_widget_scripts
 
