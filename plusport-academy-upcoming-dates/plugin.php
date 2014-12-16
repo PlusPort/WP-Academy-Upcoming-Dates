@@ -4,20 +4,20 @@
  *
  * The WordPress Widget Boilerplate is an organized, maintainable boilerplate for building widgets using WordPress best practices.
  *
- * @package   Widget_Name
+ * @package   PlusPort_Academy_Upcoming_Dates
  * @author    Your Name <email@example.com>
  * @license   GPL-2.0+
  * @link      http://example.com
  * @copyright 2014 Your Name or Company Name
  *
  * @wordpress-plugin
- * Plugin Name:       @TODO
+ * Plugin Name:       PlusPort Academy Upcoming Dates
  * Plugin URI:        @TODO
- * Description:       @TODO
+ * Description:       Shows dates of upcoming courses from the Academy
  * Version:           1.0.0
- * Author:            @TODO
+ * Author:            PlusPort B.V.
  * Author URI:        @TODO
- * Text Domain:       widget-name
+ * Text Domain:       plusport-academy-upcoming-dates
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path:       /lang
@@ -29,11 +29,9 @@ if ( ! defined ( 'ABSPATH' ) ) {
 	exit;
 }
 
-// TODO: change 'Widget_Name' to the name of your plugin
-class Widget_Name extends WP_Widget {
+class PlusPort_Academy_Upcoming_Dates extends WP_Widget {
 
     /**
-     * @TODO - Rename "widget-name" to the name your your widget
      *
      * Unique identifier for your widget.
      *
@@ -46,7 +44,7 @@ class Widget_Name extends WP_Widget {
      *
      * @var      string
      */
-    protected $widget_slug = 'widget-name';
+    protected $widget_slug = 'plusport-academy-upcoming-dates';
 
 	/*--------------------------------------------------*/
 	/* Constructor
@@ -65,13 +63,12 @@ class Widget_Name extends WP_Widget {
 		register_activation_hook( __FILE__, array( $this, 'activate' ) );
 		register_deactivation_hook( __FILE__, array( $this, 'deactivate' ) );
 
-		// TODO: update description
 		parent::__construct(
 			$this->get_widget_slug(),
-			__( 'Widget Name', $this->get_widget_slug() ),
+			__( 'PlusPort Academy Upcoming Dates', $this->get_widget_slug() ),
 			array(
 				'classname'  => $this->get_widget_slug().'-class',
-				'description' => __( 'Short description of the widget goes here.', $this->get_widget_slug() )
+				'description' => __( 'Shows dates of upcoming courses from the Academy.', $this->get_widget_slug() )
 			)
 		);
 
@@ -198,7 +195,6 @@ class Widget_Name extends WP_Widget {
 	 */
 	public function widget_textdomain() {
 
-		// TODO be sure to change 'widget-name' to the name of *your* plugin
 		load_plugin_textdomain( $this->get_widget_slug(), false, plugin_dir_path( __FILE__ ) . 'lang/' );
 
 	} // end widget_textdomain
@@ -259,5 +255,4 @@ class Widget_Name extends WP_Widget {
 
 } // end class
 
-// TODO: Remember to change 'Widget_Name' to match the class name definition
-add_action( 'widgets_init', create_function( '', 'register_widget("Widget_Name");' ) );
+add_action( 'widgets_init', create_function( '', 'register_widget("PlusPort_Academy_Upcoming_Dates");' ) );
