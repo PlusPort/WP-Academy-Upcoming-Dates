@@ -10,8 +10,8 @@
 			{{#each SessionDates}}
 				<div class="session-date">
 					{{#each SessionDate}}
-						<div class="date-from">Van: {{formatDate DateFrom 'DD-MM-YYYY HH:MM'}}</div>
-						<div class="date-until">Tot: {{formatDate DateUntil 'DD-MM-YYYY HH:MM'}}</div>
+						<div class="date-from">{{../../../widget.pp_academy_date_from_prefix}} {{formatDate DateFrom}}</div>
+						<div class="date-until">{{../../../widget.pp_academy_date_until_prefix}} {{formatDate DateUntil}}</div>
 					{{/each}}
 				</div>
 			{{/each}}

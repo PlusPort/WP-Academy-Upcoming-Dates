@@ -162,6 +162,10 @@ class PlusPort_Academy_Upcoming_Dates extends WP_Widget {
 		$instance = $old_instance;
 		$instance['pp_academy_maxsession'] = $new_instance['pp_academy_maxsession'];
 		$instance['pp_academy_trainings_id'] = $new_instance['pp_academy_trainings_id'];
+		$instance['pp_academy_title'] = $new_instance['pp_academy_title'];
+		$instance['pp_academy_dateformat'] = $new_instance['pp_academy_dateformat'];
+		$instance['pp_academy_date_from_prefix'] = $new_instance['pp_academy_date_from_prefix'];
+		$instance['pp_academy_date_until_prefix'] = $new_instance['pp_academy_date_until_prefix'];
 
 		return $instance;
 
@@ -174,7 +178,15 @@ class PlusPort_Academy_Upcoming_Dates extends WP_Widget {
 	 */
 	public function form( $instance ) {
 
-		$defaults = array('pp_academy_maxsession' => 5, 'pp_academy_trainings_id' => 0);
+		$defaults = array
+		(
+			'pp_academy_maxsession' => 5,
+			'pp_academy_trainings_id' => 0,
+			'pp_academy_title' => 'Trainingskalender',
+			'pp_academy_dateformat' => 'DD-MM-YYYY HH:MM',
+			'pp_academy_date_from_prefix' => 'Van:',
+			'pp_academy_date_until_prefix' => 'Tot:'
+		);
 		$instance = wp_parse_args(
 			(array) $instance,
 			$defaults

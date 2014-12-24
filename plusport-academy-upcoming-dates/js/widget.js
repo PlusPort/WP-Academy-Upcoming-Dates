@@ -1,9 +1,9 @@
 jQuery(document).ready(function()
 {
-	Handlebars.registerHelper('formatDate', function(date, format)
+	Handlebars.registerHelper('formatDate', function(date, options)
 	{
 		// 12/17/2014 8:30:00 AM
-		return moment(date, 'MM/DD/YYYY hh:mm:ss a').format(format);
+		return moment(date, 'MM/DD/YYYY hh:mm:ss a').format(options.data.root.widget.pp_academy_dateformat);
 	});
 
 	Handlebars.getTemplate = function(name) {
@@ -33,6 +33,7 @@ jQuery(document).ready(function()
 	}).done(function(data)
 	{
 		var compiledTemplate = Handlebars.getTemplate('edition');
+		data.widget = pp_academy_widgetdata;
 		var html = jQuery(compiledTemplate(data));
 		jQuery('.pp-academy-widget .upcoming-dates').html(html);
 	});
