@@ -16,6 +16,7 @@
 
 	$company_id = get_option('pp_academy_portal_id', '');
 	$company_guid = get_option('pp_academy_portal_guid', '');
+	$linkToWebshop = $_GET['pp_academy_link_to_webshop'];
 
 	switch(get_option('pp_academy_environment', ''))
 	{
@@ -53,6 +54,15 @@
 
 	foreach ($response->getTrainingSessionListResult->SessionInfo as $session)
 	{
+		if($linkToWebshop)
+		{
+			$url = 'https://plusportdashboard.com/formulier/getPakket.php?trainings_id=' . $session->TrainingID;
+			$json = file_get_contents($url);
+			$data = json_decode($json);
+
+			$session->WebshopCategorie = $data->categorie_id;
+			$session->WebshopPakket = $data->pakket_id;
+		}
 		$session->SessionDates = objectToArray($session->SessionDates);
 		foreach($session->SessionDates as $sessionDate)
 		{

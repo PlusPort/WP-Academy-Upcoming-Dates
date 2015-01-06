@@ -27,7 +27,8 @@ jQuery(document).ready(function()
 		data:
 		{
 			'pp_academy_maxsession': pp_academy_maxsession,
-			'pp_academy_trainings_id': pp_academy_trainings_id
+			'pp_academy_trainings_id': pp_academy_trainings_id,
+			'pp_academy_link_to_webshop': pp_academy_link_to_webshop
 		},
 		dataType: 'json'
 	}).done(function(data)
