@@ -36,6 +36,15 @@ jQuery(document).ready(function()
 		var compiledTemplate = Handlebars.getTemplate('edition');
 		data.widget = pp_academy_widgetdata;
 		var html = jQuery(compiledTemplate(data));
+		html.filter('.edition.link').click(goToWebshop);
+
 		jQuery('.pp-academy-widget .upcoming-dates').html(html);
 	});
 });
+
+function goToWebshop()
+{
+	var edition = jQuery(this);
+	var form = jQuery('<form id=\'webshoplink\' action=\''+ pp_academy_url_to_webshop +'\' method=\'POST\'><input type=\'hidden\' name=\'calendarSession\' value=\'' + edition.data('id') + '\'><input type=\'hidden\' name=\'calendarCatagory\' value=\'' + edition.data('cat') + '\'><input type=\'hidden\' name=\'calendarPakket\' value=\'' + edition.data('pak') + '\'></form>');
+	form.submit();
+}
