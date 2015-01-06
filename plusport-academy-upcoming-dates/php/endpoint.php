@@ -62,6 +62,12 @@
 
 			$session->WebshopCategorie = $data->categorie_id;
 			$session->WebshopPakket = $data->pakket_id;
+			$session->LinkToWebshop = true;
+		} else
+		{
+			$session->WebshopCategorie = '';
+			$session->WebshopPakket = '';
+			$session->LinkToWebshop = false;
 		}
 		$session->SessionDates = objectToArray($session->SessionDates);
 		foreach($session->SessionDates as $sessionDate)
