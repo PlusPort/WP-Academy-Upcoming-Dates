@@ -39,3 +39,8 @@
 	<label for="<?php echo $this->get_field_id( 'pp_academy_link_to_webshop' ); ?>">Link naar de webshop:</label>
 	<input type="checkbox" id="<?php echo $this->get_field_id( 'pp_academy_link_to_webshop' ); ?>" name="<?php echo $this->get_field_name( 'pp_academy_link_to_webshop' ); ?>" value="1" <?php if($instance['pp_academy_link_to_webshop'] == '1'){ echo "checked"; } ?> />
 </p>
+
+<p>
+	<label for="<?php echo $this->get_field_id( 'pp_academy_url_to_webshop' ); ?>">Pagina URL:</label>
+	<input type="text" id="<?php echo $this->get_field_id( 'pp_academy_url_to_webshop' ); ?>" name="<?php echo $this->get_field_name( 'pp_academy_url_to_webshop' ); ?>" value="<?php echo $instance['pp_academy_url_to_webshop']; ?>" style="width:100%;" />
+</p>
