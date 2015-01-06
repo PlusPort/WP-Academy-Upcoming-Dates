@@ -10,8 +10,8 @@
 			{{#each SessionDates}}
 				<div class="session-date">
 					{{#each SessionDate}}
-						<div class="date-from">{{../../../widget.pp_academy_date_from_prefix}} {{formatDate DateFrom}}</div>
-						<div class="date-until">{{../../../widget.pp_academy_date_until_prefix}} {{formatDate DateUntil}}</div>
+						<div class="date-from"><span class='date-from-prefix'>{{../../../widget.pp_academy_date_from_prefix}}</span> <span class='date-from-value'>{{formatDate DateFrom}}</span></div>
+						<div class="date-until"><span class='date-until-prefix'>{{../../../widget.pp_academy_date_until_prefix}}</span> <span class='date-until-value'>{{formatDate DateUntil}}</span></div>
 					{{/each}}
 				</div>
 			{{/each}}
