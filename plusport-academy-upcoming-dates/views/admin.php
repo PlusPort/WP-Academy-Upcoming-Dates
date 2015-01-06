@@ -32,3 +32,10 @@
 	<input type="text" id="<?php echo $this->get_field_id( 'pp_academy_date_until_prefix' ); ?>" name="<?php echo $this->get_field_name( 'pp_academy_date_until_prefix' ); ?>" value="<?php echo $instance['pp_academy_date_until_prefix']; ?>" style="width:100%;" />
 	<p class="description">Standaard: <code>Tot:</code></p>
 </p>
+
+<br />
+
+<p>
+	<label for="<?php echo $this->get_field_id( 'pp_academy_link_to_webshop' ); ?>">Link naar de webshop:</label>
+	<input type="checkbox" id="<?php echo $this->get_field_id( 'pp_academy_link_to_webshop' ); ?>" name="<?php echo $this->get_field_name( 'pp_academy_link_to_webshop' ); ?>" value="1" <?php if($instance['pp_academy_link_to_webshop'] == '1'){ echo "checked"; } ?> />
+</p>
