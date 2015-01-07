@@ -1,27 +1,24 @@
 <?php
 /**
- * WordPress Widget Boilerplate
+ * PlusPort Academy Upcoming Dates
  *
- * The WordPress Widget Boilerplate is an organized, maintainable boilerplate for building widgets using WordPress best practices.
+ * The PlusPort Academy Upcoming Dates Widget shows dates of upcoming courses from the PlusPort Academy.
  *
  * @package   PlusPort_Academy_Upcoming_Dates
- * @author    Your Name <email@example.com>
- * @license   GPL-2.0+
- * @link      http://example.com
- * @copyright 2014 Your Name or Company Name
+ * @author    PlusPort <systeembeheer@plusport.com>
+ * @link      http://www.plusport.com
+ * @copyright 2015 PlusPort B.V.
  *
  * @wordpress-plugin
  * Plugin Name:       PlusPort Academy Upcoming Dates
- * Plugin URI:        @TODO
+ * Plugin URI:        https://github.com/PlusPort/WP-Academy-Upcoming-Dates
  * Description:       Shows dates of upcoming courses from the Academy
  * Version:           1.0.1
  * Author:            PlusPort B.V.
- * Author URI:        @TODO
+ * Author URI:        http://www.plusport.com
  * Text Domain:       plusport-academy-upcoming-dates
- * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path:       /lang
- * GitHub Plugin URI: https://github.com/<owner>/<repo>
+ * GitHub Plugin URI: https://github.com/PlusPort/WP-Academy-Upcoming-Dates
  */
  
  // Prevent direct file access
@@ -33,8 +30,7 @@ class PlusPort_Academy_Upcoming_Dates extends WP_Widget {
 
     /**
      *
-     * Unique identifier for your widget.
-     *
+     * Unique identifier for the widget.
      *
      * The variable name is used as the text domain when internationalizing strings
      * of text. Its value should match the Text Domain file header in the main
