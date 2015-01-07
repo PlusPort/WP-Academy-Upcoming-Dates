@@ -56,7 +56,7 @@
 	{
 		if($linkToWebshop)
 		{
-			$url = 'https://plusportdashboard.com/formulier/getPakket.php?trainings_id=' . $session->TrainingID;
+			$url = 'https://plusportdashboard.com/formulier/getPakket.php?training_id=' . $session->TrainingID;
 			$json = file_get_contents($url);
 			$data = json_decode($json);
 
