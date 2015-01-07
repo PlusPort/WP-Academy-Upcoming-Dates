@@ -1,5 +1,5 @@
 {{#each getTrainingSessionListResult.SessionInfo}}
-	<div class="edition{{#if LinkToWebshop}} link{{/if}}" {{#if LinkToWebshop}}data-id='{{ID}}' data-cat='{{WebshopCategorie}}' data-pak='{{WebshopPakket}}'{{/if}}>
+	<div class="edition{{#if LinkToWebshop}} link{{/if}}" {{#if LinkToWebshop}}data-id='{{@index}}' data-cat='{{WebshopCategorie}}' data-pak='{{WebshopPakket}}'{{/if}}>
 		<div class="training-name">
 			{{TrainingName}}
 		</div>

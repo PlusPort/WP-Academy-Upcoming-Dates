@@ -1,3 +1,5 @@
+var pp_academy_editions = {};
+
 jQuery(document).ready(function()
 {
 	Handlebars.registerHelper('formatDate', function(date, options)
@@ -34,6 +36,7 @@ jQuery(document).ready(function()
 	}).done(function(data)
 	{
 		var compiledTemplate = Handlebars.getTemplate('edition');
+		pp_academy_editions = data.getTrainingSessionListResult.SessionInfo;
 		data.widget = pp_academy_widgetdata;
 		var html = jQuery(compiledTemplate(data));
 		html.filter('.edition.link').click(goToWebshop);
@@ -45,6 +48,7 @@ jQuery(document).ready(function()
 function goToWebshop()
 {
 	var edition = jQuery(this);
-	var form = jQuery('<form id=\'webshoplink\' action=\''+ pp_academy_url_to_webshop +'\' method=\'POST\'><input type=\'hidden\' name=\'calendarSession\' value=\'' + edition.data('id') + '\'><input type=\'hidden\' name=\'calendarCatagory\' value=\'' + edition.data('cat') + '\'><input type=\'hidden\' name=\'calendarPakket\' value=\'' + edition.data('pak') + '\'></form>');
+	var session = encodeURIComponent(JSON.stringify(pp_academy_editions[edition.data('id')]));
+	var form = jQuery('<form id=\'webshoplink\' action=\''+ pp_academy_url_to_webshop +'\' method=\'POST\'><input type=\'hidden\' name=\'calendarSession\' value=\'' + session + '\'><input type=\'hidden\' name=\'calendarCatagory\' value=\'' + edition.data('cat') + '\'><input type=\'hidden\' name=\'calendarPakket\' value=\'' + edition.data('pak') + '\'><input type=\'hidden\' name=\'calendarMonth\' value=\'0\'></form>');
 	form.submit();
 }

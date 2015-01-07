@@ -62,7 +62,7 @@
 
 			$session->WebshopCategorie = $data->categorie_id;
 			$session->WebshopPakket = $data->pakket_id;
-			$session->LinkToWebshop = true;
+			$session->LinkToWebshop = !empty($data->pakket_id) && !empty($data->categorie_id) ? true : false;
 		} else
 		{
 			$session->WebshopCategorie = '';
