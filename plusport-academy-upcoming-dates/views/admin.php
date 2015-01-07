@@ -13,7 +13,7 @@
 	<input type="number" id="<?php echo $this->get_field_id( 'pp_academy_trainings_id' ); ?>" name="<?php echo $this->get_field_name( 'pp_academy_trainings_id' ); ?>" value="<?php echo $instance['pp_academy_trainings_id']; ?>" style="width:100%;" />
 </p>
 
-<br />
+<hr />
 
 <p>
 	<label for="<?php echo $this->get_field_id( 'pp_academy_dateformat' ); ?>">Opmaak datum:</label>
@@ -33,7 +33,7 @@
 	<p class="description">Standaard: <code>Tot:</code></p>
 </p>
 
-<br />
+<hr />
 
 <p>
 	<label for="<?php echo $this->get_field_id( 'pp_academy_link_to_webshop' ); ?>">Link naar de webshop:</label>
