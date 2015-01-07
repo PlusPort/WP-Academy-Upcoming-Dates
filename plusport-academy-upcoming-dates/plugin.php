@@ -14,7 +14,7 @@
  * Plugin Name:       PlusPort Academy Upcoming Dates
  * Plugin URI:        @TODO
  * Description:       Shows dates of upcoming courses from the Academy
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            PlusPort B.V.
  * Author URI:        @TODO
  * Text Domain:       plusport-academy-upcoming-dates
