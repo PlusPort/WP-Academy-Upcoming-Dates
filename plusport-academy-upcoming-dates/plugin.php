@@ -13,7 +13,7 @@
  * Plugin Name:       PlusPort Academy Upcoming Dates
  * Plugin URI:        https://github.com/PlusPort/WP-Academy-Upcoming-Dates
  * Description:       Shows dates of upcoming courses from the Academy
- * Version:           1.0.1
+ * Version:           1.1.0
  * Author:            PlusPort B.V.
  * Author URI:        http://www.plusport.com
  * Text Domain:       plusport-academy-upcoming-dates
