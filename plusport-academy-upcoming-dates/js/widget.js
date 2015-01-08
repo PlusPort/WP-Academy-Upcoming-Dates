@@ -33,6 +33,8 @@ jQuery(document).ready(function()
 			'pp_academy_link_to_webshop': pp_academy_link_to_webshop,
 			'pp_academy_merge_sessiondates': pp_academy_merge_sessiondates
 		},
+		cache: true,
+		ifModified: true,
 		dataType: 'json'
 	}).done(function(data)
 	{

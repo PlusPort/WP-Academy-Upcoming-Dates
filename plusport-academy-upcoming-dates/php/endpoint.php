@@ -1,5 +1,22 @@
 <?php
 	header('Access-Control-Allow-Origin: *');
+
+	if (isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) && strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE']) <= strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE']))
+	{
+		header('HTTP/1.0 304 Not Modified');
+		exit;
+	}
+
+	header('Content-type: application/json');
+	date_default_timezone_set('UTC');
+	$secondsToEndOfDay = strtotime('tomorrow') - time();
+	$tomorrow = gmdate("D, d M Y H:i:s", time() + $secondsToEndOfDay) . " GMT";
+	header("Expires: $tomorrow");
+	header("Pragma: cache");
+	header("Cache-Control: max-age=$secondsToEndOfDay");
+	$secondsSinceMidnight = time() - strtotime("today");
+ 	header("Last-Modified: " . gmdate('D, d M Y 00:00:00', time()) . ' GMT');
+
 	require_once($_SERVER['DOCUMENT_ROOT'] . '/wp-load.php');
 	error_reporting(E_ERROR); // Show only errors
 
