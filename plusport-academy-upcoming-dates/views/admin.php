@@ -33,6 +33,12 @@
 	<p class="description">Standaard: <code>Tot:</code></p>
 </p>
 
+<p>
+	<label for="<?php echo $this->get_field_id( 'pp_academy_merge_sessiondates' ); ?>">Opleidingsdagen samenvoegen:</label>
+	<input type="checkbox" id="<?php echo $this->get_field_id( 'pp_academy_merge_sessiondates' ); ?>" name="<?php echo $this->get_field_name( 'pp_academy_merge_sessiondates' ); ?>" value="1" <?php if($instance['pp_academy_merge_sessiondates'] == '1'){ echo "checked"; } ?> />
+</p>
+
+
 <hr />
 
 <p>

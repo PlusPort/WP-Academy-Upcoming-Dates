@@ -164,6 +164,7 @@ class PlusPort_Academy_Upcoming_Dates extends WP_Widget {
 		$instance['pp_academy_date_until_prefix'] = $new_instance['pp_academy_date_until_prefix'];
 		$instance['pp_academy_link_to_webshop'] = $new_instance['pp_academy_link_to_webshop'];
 		$instance['pp_academy_url_to_webshop'] = $new_instance['pp_academy_url_to_webshop'];
+		$instance['pp_academy_merge_sessiondates'] = $new_instance['pp_academy_merge_sessiondates'];
 
 		return $instance;
 
@@ -185,7 +186,8 @@ class PlusPort_Academy_Upcoming_Dates extends WP_Widget {
 			'pp_academy_date_from_prefix' => 'Van:',
 			'pp_academy_date_until_prefix' => 'Tot:',
 			'pp_academy_link_to_webshop' => '',
-			'pp_academy_url_to_webshop' => ''
+			'pp_academy_url_to_webshop' => '',
+			'pp_academy_merge_sessiondates' => ''
 		);
 		$instance = wp_parse_args(
 			(array) $instance,

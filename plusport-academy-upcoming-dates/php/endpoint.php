@@ -17,6 +17,7 @@
 	$company_id = get_option('pp_academy_portal_id', '');
 	$company_guid = get_option('pp_academy_portal_guid', '');
 	$linkToWebshop = $_GET['pp_academy_link_to_webshop'];
+	$mergedSessionDates = $_GET['pp_academy_merge_sessiondates'];
 
 	switch(get_option('pp_academy_environment', ''))
 	{
@@ -70,9 +71,17 @@
 			$session->LinkToWebshop = false;
 		}
 		$session->SessionDates = objectToArray($session->SessionDates);
+
 		foreach($session->SessionDates as $sessionDate)
 		{
 			$sessionDate->SessionDate = objectToArray($sessionDate->SessionDate);
+		}
+
+		if($mergedSessionDates)
+		{
+			$session->SessionDates[0]->SessionDate[0]->DateUntil = $session->SessionDates[count($session->SessionDates)-1]->SessionDate[count($session->SessionDates[count($session->SessionDates)-1]->SessionDate)-1]->DateUntil; // Set last session until date in first session date
+			$session->SessionDates[0]->SessionDate = array_slice($session->SessionDates[0]->SessionDate, 0, 1); // Remove all other sessiondate dates
+			$session->SessionDates = array_slice($session->SessionDates, 0, 1); // Remove all other session dates
 		}
 	}
 
