@@ -16,6 +16,10 @@ Copyright PlusPort B.V.
 
 ## Changelog
 
+### 1.1.0 (8 January 2015)
+* Option to group all dates from 1 course to 1 start and end date.
+* All requests are cached 1 day - Refreshes on midnight
+
 ### 1.0.1 (7 January 2015)
 * Editions can be clickable and link to the Webshop
 
