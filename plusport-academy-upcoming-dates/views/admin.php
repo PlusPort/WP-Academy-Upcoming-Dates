@@ -9,7 +9,7 @@
 </p>
 
 <p>
-	<label for="<?php echo $this->get_field_id( 'pp_academy_trainings_id' ); ?>">Trainigs ID:</label>
+	<label for="<?php echo $this->get_field_id( 'pp_academy_trainings_id' ); ?>">Trainings ID:</label>
 	<input type="number" id="<?php echo $this->get_field_id( 'pp_academy_trainings_id' ); ?>" name="<?php echo $this->get_field_name( 'pp_academy_trainings_id' ); ?>" value="<?php echo $instance['pp_academy_trainings_id']; ?>" style="width:100%;" />
 </p>
 
