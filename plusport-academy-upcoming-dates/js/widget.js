@@ -52,6 +52,7 @@ function goToWebshop()
 {
 	var edition = jQuery(this);
 	var session = encodeURIComponent(JSON.stringify(pp_academy_editions[edition.data('id')]));
-	var form = jQuery('<form id=\'webshoplink\' action=\''+ pp_academy_url_to_webshop +'\' method=\'POST\'><input type=\'hidden\' name=\'calendarSession\' value=\'' + session + '\'><input type=\'hidden\' name=\'calendarCatagory\' value=\'' + edition.data('cat') + '\'><input type=\'hidden\' name=\'calendarPakket\' value=\'' + edition.data('pak') + '\'><input type=\'hidden\' name=\'calendarMonth\' value=\'0\'></form>');
+	var form = jQuery('<form id=\'webshoplink\' action=\''+ pp_academy_url_to_webshop +'\' method=\'POST\'><input type=\'hidden\' name=\'calendarSession\' value=\'' + session + '\'><input type=\'hidden\' name=\'calendarCatagory\' value=\'' + edition.data('cat') + '\'><input type=\'hidden\' name=\'calendarPakket\' value=\'' + edition.data('pak') + '\'><input type=\'hidden\' name=\'calendarMonth\' value=\'0\'><input type="submit" value="Submit" /></form>');
+	jQuery('body').append(form);
 	form.submit();
 }
