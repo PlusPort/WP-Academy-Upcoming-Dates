@@ -1,20 +1,20 @@
 {{#each getTrainingSessionListResult.SessionInfo}}
-	<div class="edition{{#if LinkToWebshop}} link{{/if}}" {{#if LinkToWebshop}}data-id='{{@index}}' data-cat='{{WebshopCategorie}}' data-pak='{{WebshopPakket}}'{{/if}}>
-		<div class="training-name">
-			{{TrainingName}}
+	{{#unless Full}} 
+		<div class="edition{{#if LinkToWebshop}} link{{/if}}" {{#if LinkToWebshop}}data-id='{{@index}}' data-cat='{{WebshopCategorie}}' data-pak='{{WebshopPakket}}'{{/if}}>
+			<div class="training-name">{{TrainingName}}</div>
+			<div class="Location-address">
+				{{LocationAddress}}, {{LocationCity}}
+			</div>
+			<div class="session-dates">
+				{{#each SessionDates}}
+					<div class="session-date">
+						{{#each SessionDate}}
+							<div class="date-from"><span class='date-from-prefix'>{{../../../../widget.pp_academy_date_from_prefix}}</span> <span class='date-from-value'>{{formatDate DateFrom}}</span></div>
+							<div class="date-until"><span class='date-until-prefix'>{{../../../../widget.pp_academy_date_until_prefix}}</span> <span class='date-until-value'>{{formatDate DateUntil}}</span></div>
+						{{/each}}
+					</div>
+				{{/each}}
+			</div>
 		</div>
-		<div class="Location-address">
-			{{LocationAddress}}, {{LocationCity}}
-		</div>
-		<div class="session-dates">
-			{{#each SessionDates}}
-				<div class="session-date">
-					{{#each SessionDate}}
-						<div class="date-from"><span class='date-from-prefix'>{{../../../widget.pp_academy_date_from_prefix}}</span> <span class='date-from-value'>{{formatDate DateFrom}}</span></div>
-						<div class="date-until"><span class='date-until-prefix'>{{../../../widget.pp_academy_date_until_prefix}}</span> <span class='date-until-value'>{{formatDate DateUntil}}</span></div>
-					{{/each}}
-				</div>
-			{{/each}}
-		</div>
-	</div>
+	{{/unless}}
 {{/each}}
